@@ -1,0 +1,321 @@
+/* styles.css */
+
+/* การตั้งค่าพื้นฐาน */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Prompt', sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+    font-size: 12px; /* ขนาดฟอนต์ทั่วไป ปรับเป็น 12px */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+header .logo img {
+    max-width: 150px;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 16px; /* ขนาดฟอนต์หัวข้อ ปรับเป็น 16px */
+    font-weight: 700; /* ตัวหนา */
+    color: orange; /* สีส้ม */
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #666666;
+    font-size: 14px; /* ขนาดฟอนต์ข้อความแนะนำ ปรับเป็น 14px */
+}
+
+section {
+    margin-bottom: 25px;
+}
+
+section h2 {
+    font-size: 14px; /* ขนาดฟอนต์หัวข้อ ปรับเป็น 14px */
+    font-weight: 700; /* ตัวหนา */
+    color: orange; /* สีส้ม */
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+}
+
+/* การจัดวางฟอร์มแบบสองคอลัมน์ */
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 700; /* ตัวหนา */
+    color: #333333;
+    font-size: 12px; /* ขนาดฟอนต์ป้ายชื่อ ปรับเป็น 12px */
+}
+
+.required {
+    color: red;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-family: 'Prompt', sans-serif;
+    font-size: 12px; /* ขนาดฟอนต์อินพุต ปรับเป็น 12px */
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* การจัดรูปแบบ Select กับไอคอน */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding-right: 40px;
+    font-size: 12px; /* ขนาดฟอนต์ Select ปรับเป็น 12px */
+}
+
+.select-wrapper i {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #888888;
+    pointer-events: none;
+    font-size: 12px; /* ขนาดไอคอน Select ปรับเป็น 12px */
+}
+
+/* ปุ่ม */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 12px; /* ขนาดฟอนต์ปุ่ม ปรับเป็น 12px */
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.submit-btn {
+    width: 100%;
+    background-color: #28a745;
+}
+
+.submit-btn:hover {
+    background-color: #218838;
+}
+
+/* ปุ่มเพิ่มอุปกรณ์ */
+.add-device-btn {
+    background-color: #17a2b8;
+}
+
+.add-device-btn:hover {
+    background-color: #117a8b;
+}
+
+/* การจัดวางอุปกรณ์แบบ Card */
+.device-item {
+    border: 1px solid #dddddd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    position: relative;
+    background-color: #fdfdfd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-size: 12px; /* ขนาดฟอนต์ภายใน Card ปรับเป็น 12px */
+}
+
+.device-item h3 {
+    margin-top: 0;
+    color: #333333;
+    font-size: 12px; /* ขนาดฟอนต์หัวข้อใน Card ปรับเป็น 12px */
+    font-weight: 700; /* ตัวหนา */
+}
+
+.remove-device {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    color: #dc3545;
+    font-size: 14px; /* ขนาดไอคอนลบอุปกรณ์ ปรับเป็น 14px */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.remove-device:hover {
+    color: #a71d2a;
+}
+
+/* Dropzone สำหรับการอัปโหลดไฟล์ */
+.dropzone {
+    border: 2px dashed #cccccc;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    color: #888888;
+    cursor: pointer;
+    transition: border-color 0.3s, background-color 0.3s;
+    position: relative;
+}
+
+.dropzone:hover {
+    border-color: #007BFF;
+    background-color: #f0f8ff;
+}
+
+.dropzone i {
+    font-size: 14px; /* ขนาดไอคอนอัปโหลด ปรับเป็น 14px */
+    margin-bottom: 10px;
+    color: #007BFF;
+}
+
+.dropzone input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* รายการไฟล์ที่อัปโหลด */
+.file-list {
+    margin-top: 10px;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 12px; /* ขนาดฟอนต์รายการไฟล์ ปรับเป็น 12px */
+}
+
+.file-item i {
+    margin-right: 10px;
+    color: #007BFF;
+    font-size: 14px; /* ขนาดไอคอนไฟล์ ปรับเป็น 14px */
+}
+
+.file-item .file-name {
+    flex: 1;
+}
+
+.remove-file {
+    background-color: transparent;
+    border: none;
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 14px; /* ขนาดไอคอนลบไฟล์ ปรับเป็น 14px */
+    transition: color 0.3s;
+}
+
+.remove-file:hover {
+    color: #a71d2a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+}
+
+/* การตั้งค่าฟอนต์สำหรับ Placeholder */
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+    font-family: 'Prompt', sans-serif;
+    font-size: 12px; /* ขนาดฟอนต์ Placeholder ปรับเป็น 12px */
+    color: #999999; /* สีของ Placeholder */
+}
+
+/* เพิ่มการจัดรูปแบบสำหรับ Checklist */
+.checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px; /* ขนาดฟอนต์ Checklist ปรับเป็น 12px */
+}
+
+.checkbox-group label {
+    font-weight: normal; /* ปรับเป็นปกติเพื่อไม่ให้ตัวหนา */
+    color: #333333;
+}
+
+/* ฟอนต์และขนาดฟอนต์สำหรับฟิลด์ที่จำเป็น */
+input[required],
+select[required],
+textarea[required] {
+    border-color: #dc3545; /* สีแดงสำหรับฟิลด์ที่จำเป็น */
+}
+
+/* ฟอนต์และขนาดฟอนต์สำหรับฟิลด์ที่ไม่บังคับกรอก */
+input:not([required]),
+select:not([required]),
+textarea:not([required]) {
+    border-color: #cccccc; /* สีเทาสำหรับฟิลด์ที่ไม่บังคับกรอก */
+}
