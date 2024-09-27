@@ -1,1 +1,145 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แบบฟอร์มขอข้อมูลสำหรับการให้บริการลูกค้า 1.0.6</title>
+    <!-- นำเข้า Font Prompt จาก Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;700&display=swap" rel="stylesheet">
+    <!-- นำเข้า Font Awesome สำหรับไอคอน -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <img src="https://www.nisolution.co.th/wp-content/uploads/2019/10/logo_nis..png" alt="โลโก้บริษัท">
+            </div>
+            <h1>แบบฟอร์มขอข้อมูลสำหรับการให้บริการลูกค้า</h1>
+            <p>กรุณากรอกข้อมูลด้านล่างเพื่อให้เราทราบถึงบริการที่คุณต้องการ</p>
+        </header>
 
+        <!-- ฟอร์ม -->
+        <form id="ma-form">
+            <!-- ข้อมูลผู้ติดต่อ -->
+            <section>
+                <h2>ข้อมูลผู้ติดต่อ</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="company">บริษัท/องค์กร <span class="required">*</span></label>
+                        <input type="text" id="company" name="company" placeholder="กรอกชื่อบริษัทหรือองค์กร" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="full-name">ชื่อ นามสกุล <span class="required">*</span></label>
+                        <input type="text" id="full-name" name="full-name" placeholder="กรอกชื่อและนามสกุล" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone">เบอร์โทรศัพท์ <span class="required">*</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="กรอกเบอร์โทรศัพท์" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">อีเมล <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" placeholder="กรอกอีเมล" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="address">ที่อยู่</label>
+                        <textarea id="address" name="address" rows="2" placeholder="กรอกที่อยู่"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="position">ตำแหน่ง</label>
+                        <input type="text" id="position" name="position" placeholder="กรอกตำแหน่ง">
+                    </div>
+                </div>
+            </section>
+
+            <!-- เลือกประเภทบริการที่ต้องการ -->
+            <section>
+                <h2>เลือกประเภทบริการที่ต้องการ</h2>
+                <div class="form-group">
+                    <label for="service-type">ประเภทบริการ <span class="required">*</span></label>
+                    <div class="select-wrapper">
+                        <select id="service-type" name="service-type" required>
+                            <option value="">-- เลือกประเภทบริการ --</option>
+                            <option value="MA Fortigate">MA Fortigate</option>
+                            <option value="MA Cisco">MA Cisco</option>
+                            <option value="MA Server">MA Server</option>
+                            <option value="Other">บริการอื่นๆ</option>
+                        </select>
+                        <i class="fa fa-chevron-down"></i>
+                    </div>
+                </div>
+                <!-- ข้อความแนบไฟล์ (ถูกย้ายออกแล้ว) -->
+            </section>
+
+            <!-- รายละเอียดอุปกรณ์ -->
+            <section id="devices-section" style="display: none;">
+                <h2>รายละเอียดอุปกรณ์</h2>
+                <div id="devices-container">
+                    <!-- อุปกรณ์จะถูกเพิ่มที่นี่โดย JavaScript -->
+                </div>
+                <button type="button" id="add-device-btn" class="btn add-device-btn"><i class="fa fa-plus"></i> เพิ่มอุปกรณ์</button>
+            </section>
+
+            <!-- บริการอื่นๆ -->
+            <section id="other-services-section" style="display: none;">
+                <h2>บริการอื่นๆ</h2>
+                <div class="form-group">
+                    <label>บริการที่ต้องการ <span class="required">*</span></label>
+                    <p>สามารถเลือกบริการที่ต้องการได้มากกว่า 1 ข้อ</p>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="desired-service[]" value="Network & WiFi"> ระบบ Network & WiFi</label><br>
+                        <label><input type="checkbox" name="desired-service[]" value="Server & Backup"> ระบบ Server & Backup</label><br>
+                        <label><input type="checkbox" name="desired-service[]" value="Firewall & VPN"> ระบบ Firewall & VPN</label><br>
+                        <label><input type="checkbox" name="desired-service[]" value="IT Support / Outsource"> บริการ MA IT Support / IT Outsource</label><br>
+                        <label><input type="checkbox" name="desired-service[]" value="Cable Installation"> บริการติดตั้งสายสัญญาณฯ</label><br>
+                        <label><input type="checkbox" name="desired-service[]" value="Other Services"> บริการอื่นๆ</label>
+                    </div>
+                </div>
+
+               <section id="attachments-section">
+                    <h2>แนบไฟล์</h2>
+                    
+                    <!-- ข้อความแนบไฟล์ -->
+                    <div id="attachment-info" class="form-group" style="display: none;">
+                        <label>ลูกค้าสามารถแนบไฟล์รายการอุปกรณ์ที่ต้องการต่อ MA หรือข้อมูลเพิ่มเติมอื่นๆ</label>
+                    </div>
+                    
+                    <div class="form-group">
+                        <div class="dropzone" id="dropzone">
+                            <i class="fa fa-upload"></i>
+                            <p>ลากและวางไฟล์ที่นี่ หรือคลิกเพื่อเลือกไฟล์</p>
+                            <input type="file" id="attachments" name="attachments" multiple accept=".doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png">
+                        </div>
+                        <div id="file-list" class="file-list"></div>
+                    </div>
+                </section>
+                <div class="form-group">
+                    <label for="other-details">รายละเอียด</label>
+                    <textarea id="other-details" name="other-details" rows="3" placeholder="กรอกรายละเอียดเพิ่มเติม"></textarea>
+                </div>
+                <!-- แนบไฟล์ (เพิ่มใหม่) -->
+            
+            </section>
+
+            <!-- ปุ่มส่งแบบฟอร์ม -->
+            <div class="form-group">
+                <button type="submit" class="btn submit-btn"><i class="fa fa-paper-plane"></i> ส่งแบบฟอร์ม</button>
+            </div>
+        </form>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="scripts.js"></script>
+  
+    
+   
+</body>
+</html>
